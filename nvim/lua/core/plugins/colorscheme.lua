@@ -1,10 +1,10 @@
 return {
-  "luisiacc/gruvbox-baby",
-  priority = 1000,
-  lazy = false,
-  opts = {},
-  config = function()
-	  vim.o.background = "dark"
-	  vim.cmd.colorscheme "gruvbox-baby"
-  end,
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {},
+	config = function ()
+		vim.o.background = "dark"
+		vim.cmd.colorscheme("tokyonight-night")
+	end
 }

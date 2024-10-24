@@ -55,10 +55,6 @@ return {
 				lualine_b = {
 					{ "filename", path = 1 },
 					{
-						require("nvim-possession").status,
-						cond = function()
-							return require("nvim-possession").status() ~= nil
-						end,
 					},
 				},
 				lualine_c = {

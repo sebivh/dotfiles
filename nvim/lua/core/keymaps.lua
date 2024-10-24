@@ -48,6 +48,15 @@ opts.desc = "String Suche mit Telescope"
 keymap("n", "<leader>tc", "<cmd>Telescope grep_string<CR>", opts)
 
 
+--############ Sessions #############
+opts.desc = "Session speichern"
+keymap("n", "<leader>ss", "<cmd>SessionManager save_current_session<CR>", opts)
+opts.desc = "Session Laden"
+keymap("n", "<leader>sl", "<cmd>SessionManager load_session<CR>", opts)
+opts.desc = "Session löschen"
+keymap("n", "<leader>sd", "<cmd>SessionManager delete_session<CR>", opts)
+opts.desc = "Letzte offene Session Laden"
+keymap("n", "<leader>so", "<cmd>SessionManager load_last_session<CR>", opts)
 
 
 

@@ -7,6 +7,7 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		event = "BufReadPost",
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -31,7 +32,7 @@ return {
 			local keymap = vim.keymap
 			local opts = { noremap = true, silent = true }
 
-			local on_attach = function(client, bufnr)
+			local on_attach = function(_client, bufnr)
 				opts.buffer = bufnr
 
 				opts.desc = ""
@@ -104,6 +105,24 @@ return {
 						suggest = {
 							completeFunctionCalls = true,
 						}
+					}
+				}
+			})
+			lspconfig["tailwindcss"].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					tailwindCSS = {
+						emmetCompletions = true,
+					}
+				}
+			})
+			lspconfig["cssls"].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					css = {
+
 					}
 				}
 			})

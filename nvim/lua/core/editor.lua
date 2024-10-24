@@ -38,3 +38,5 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
 -- Automaticly enter insert mode in the Terminal
 vim.api.nvim_create_autocmd({ "TermOpen", "WinEnter" }, { pattern = "term://*", command = "startinsert" })
+
+-- Dont show error messages inlined
