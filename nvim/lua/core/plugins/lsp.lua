@@ -108,6 +108,7 @@ return {
 					}
 				}
 			})
+<<<<<<< HEAD
 			lspconfig["tailwindcss"].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
@@ -124,6 +125,13 @@ return {
 					css = {
 
 					}
+=======
+			lspconfig["pylsp"].setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+
+>>>>>>> 3323806a88b39493c935b37f5c7b6655e4ed4c68
 				}
 			})
 		end,

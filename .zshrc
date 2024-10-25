@@ -110,3 +110,8 @@ export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 export PATH="/opt/homebrew/opt/texinfo/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/:$PATH"
+
+# Py env for easy switching of pyhton versions
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
