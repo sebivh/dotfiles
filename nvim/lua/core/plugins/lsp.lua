@@ -36,22 +36,22 @@ return {
 			local on_attach = function(_client, bufnr)
 				opts.buffer = bufnr
 
-				opts.desc = ""
+				opts.desc = "LSP Referencen"
 				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
 
-				opts.desc = ""
+				opts.desc = "LSP Declaration"
 				keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
-				opts.desc = ""
-				keymap.set("n", "gd", "<cmd>Telescope lsp_defenitions<CR>", opts)
+				opts.desc = "LSP Defenition"
+				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
-				opts.desc = ""
+				opts.desc = "LSP Implementationen"
 				keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 
-				opts.desc = ""
+				opts.desc = "LSP Deffenizionen"
 				keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
-				opts.desc = ""
+				opts.desc = "LSP Buffer Hoffer"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			end
 
@@ -134,10 +134,18 @@ return {
 				capabilities = capabilities,
 				on_attach = on_attach,
 				settings = {
-
+					pylsp = {
+						plugins = {
+							pycodestyle = {
+								ignore = {'E731'},
+								maxLineLength = 150
+							}
+						}
+					}
 				}
 			})
 
 		end,
 	},
+
 }

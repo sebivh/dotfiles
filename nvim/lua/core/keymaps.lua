@@ -47,6 +47,9 @@ keymap("n", "<leader>tt", "<cmd>Telescope live_grep<CR>", opts)
 opts.desc = "String Suche mit Telescope"
 keymap("n", "<leader>tc", "<cmd>Telescope grep_string<CR>", opts)
 
+opts.desc = "Buffer Suche mit Telescope"
+keymap("n", "<leader>tb", "<cmd>Telescope buffers<CR>", opts)
+
 
 --############ Sessions #############
 opts.desc = "Session speichern"
