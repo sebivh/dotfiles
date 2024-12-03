@@ -1,4 +1,5 @@
 return {
+
 	{
 		"williamboman/mason.nvim",
 		config = function()
@@ -13,7 +14,6 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"ts_ls",
-					"pylsp"
 				}
 			})
 
@@ -26,6 +26,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			{ "antosha417/nvim-lsp-file-operations", config = true, },
 		},
+		opts = { diagnostics = { virtual_text = false } },
 		config = function()
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -130,21 +131,13 @@ return {
 				}
 			})
 
-			lspconfig["pylsp"].setup({
+			lspconfig["pyright"].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
 				settings = {
-					pylsp = {
-						plugins = {
-							pycodestyle = {
-								ignore = {'E731'},
-								maxLineLength = 150
-							}
-						}
 					}
 				}
-			})
-
+			)
 		end,
 	},
 
