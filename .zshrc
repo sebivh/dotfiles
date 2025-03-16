@@ -102,16 +102,5 @@ source $ZSH/oh-my-zsh.sh
 alias home="$HOME"
 alias ..="cd .."
 
-# Custome Paths
-export PICO_SDK_PATH=$HOME/libaries/pico-sdk
-export PICO_EXTRAS_PATH=$HOME/libaries/pico-extras
-export PICO_TOOLCHAIN_PATH=$HOME/../../Applications/ArmGNUToolchain/12.2.mpacbti-rel1/arm-none-eabi
-export CPATH=/opt/homebrew/include
-export LIBRARY_PATH=/opt/homebrew/lib
-export PATH="/opt/homebrew/opt/texinfo/bin:$PATH"
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/:$PATH"
-
-# Py env for easy switching of pyhton versions
-export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
