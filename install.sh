@@ -29,3 +29,6 @@ brew install -v lazygit
 echo Linking config files for Lazygit
 rm -fr ~/.config/lazygit
 ln -Fs ~/.dotfiles/lazygit ~/.config/lazygit
+
+# Pyenv
+brew install -v pyenv
