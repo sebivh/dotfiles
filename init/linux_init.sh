@@ -1,3 +1,4 @@
+#!/bin/bash
 # Contains OS-Specific Installation for the Shell(zsh) and Packagemenager(Homebrew)
 
 # Skript needs to be executed as root
@@ -10,6 +11,10 @@ fi
 echo Installing ZSH and Oh my ZSH as Shell
 apt install zsh
 chsh -s $(which zsh)
+
+# Install Oh My zsh
+echo Installing Oh My ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Homebrew
 echo Installing Homebrew as Package Manager
