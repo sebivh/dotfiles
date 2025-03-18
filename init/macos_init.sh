@@ -1,3 +1,27 @@
-ln -Fs ~/.dotfiles/nvim ~/.config/nvim
-ln -Fs ~/.dotfiles/lazygit ~/.config/lazygit
+#!/bin/bash
+# Contains OS-Specific Installation for the Shell(zsh) and Packagemenager(Homebrew)
 
+# Skript needs to be executed as root
+if [ "$EUID" -ne 0 ]
+  then echo "This skript needs to be executed as root for installation!"
+  exit
+fi
+
+# Install XCode Command Line tools
+echo Install XCode Command Line Tools
+xcode-select --install
+
+# Install Homebrew
+echo Installing Homebrew as Package Manager
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+touch ~/.zshenv
+echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshenv
+
+# Install zsh
+echo Installing ZSH and Oh my ZSH as Shell
+brew install zsh
+chsh -s $(which zsh)
+
+# Install Oh My zsh
+echo Installing Oh My ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
