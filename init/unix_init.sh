@@ -7,21 +7,11 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-# Install XCode Command Line tools
-echo Install XCode Command Line Tools
-xcode-select --install
-
 # Install Homebrew
 echo Installing Homebrew as Package Manager
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-touch ~/.zshenv
-echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshenv
 
-# Install zsh
-echo Installing ZSH and Oh my ZSH as Shell
+# Installing zsh
+echo Installing zsh and setting as default Shell
 brew install zsh
 chsh -s $(which zsh)
-
-# Install Oh My zsh
-echo Installing Oh My ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
