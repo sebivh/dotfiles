@@ -152,6 +152,9 @@ return {
 					}
 				}
 			)
+			lspconfig["ansiblels"].setup({
+				
+			})
 
 		end,
 	},
