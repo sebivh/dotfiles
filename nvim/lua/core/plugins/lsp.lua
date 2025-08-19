@@ -81,7 +81,7 @@ return {
 				on_attach = on_attach,
 				settings = {
 					latex = {
-						language = "de-de",
+						language = "de-DE",
 						enablePickyRules = true,
 						completionEnabled = true,
 					}
