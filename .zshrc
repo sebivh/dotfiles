@@ -100,6 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Enable the zsh VIM keybindings by default
+bindkey -v
+#
 alias home="$HOME"
 alias ..="cd .."
 alias c="clear"

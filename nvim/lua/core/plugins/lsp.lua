@@ -155,8 +155,14 @@ return {
 			lspconfig["ansiblels"].setup({
 				
 			})
+			lspconfig["vhdl_ls"].setup({
+				
+			})
 
 		end,
 	},
+	{
+
+	}
 
 }
